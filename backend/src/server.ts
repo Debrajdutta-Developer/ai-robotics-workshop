@@ -7,6 +7,8 @@ import enquiryRoutes from './routes/enquiryRoutes';
 
 dotenv.config();
 
+// ... imports ...
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -26,6 +28,10 @@ app.get('/health', (req, res) => {
 // Error Handler
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`[server]: Server is running at http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`[server]: Server is running at http://localhost:${PORT}`);
+  });
+}
+
+export default app;
