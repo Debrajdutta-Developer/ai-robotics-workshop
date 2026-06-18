@@ -46,7 +46,7 @@ export const RegistrationForm: React.FC = () => {
               <label className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
               <input
                 {...register('name', { required: 'Name is required', minLength: { value: 2, message: 'Too short' } })}
-                className={`w-full bg-premium-gray border ${errors.name ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition-colors`}
+                className={`w-full bg-premium-gray text-white border ${errors.name ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition-colors`}
                 placeholder="John Doe"
               />
               {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
@@ -59,7 +59,7 @@ export const RegistrationForm: React.FC = () => {
                   required: 'Email is required', 
                   pattern: { value: /^\S+@\S+$/i, message: 'Invalid email' } 
                 })}
-                className={`w-full bg-premium-gray border ${errors.email ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition-colors`}
+                className={`w-full bg-premium-gray text-white border ${errors.email ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition-colors`}
                 placeholder="john@example.com"
               />
               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -72,7 +72,7 @@ export const RegistrationForm: React.FC = () => {
                   required: 'Phone is required',
                   pattern: { value: /^\+?[\d\s-]{10,}$/, message: 'Invalid phone number' }
                 })}
-                className={`w-full bg-premium-gray border ${errors.phone ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition-colors`}
+                className={`w-full bg-premium-gray text-white border ${errors.phone ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition-colors`}
                 placeholder="+91 98765 43210"
               />
               {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
